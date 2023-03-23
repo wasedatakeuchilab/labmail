@@ -1,0 +1,80 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "labmail"
+description = "Sends a message with your signature via Gmail"
+readme = "README.md"
+requires-python = "~=3.10"
+license = "MIT"
+authors = [
+  { name = "Shuhei Nitta", email = "huisintheta@gmail.com" }
+]
+# keywords = []
+# classifiers = []
+dependencies = [
+  "click~=8.1.3",
+  "google-auth~=2.16.2",
+  "google-auth-oauthlib~=1.0.0",
+  "google-api-python-client~=2.82.0",
+  "markdown~=3.4.1",
+]
+dynamic = ["version"]
+
+[project.urls]
+Documentation = ""
+Homepage = "https://github.com/wasedatakeuchilab/labmail"
+
+[project.optional-dependencies]
+test = [
+  "pytest==7.2.2",
+  "pytest-cov==4.0.0",
+  "pytest-describe==2.0.1",
+  "pytest-mock==3.10.0",
+  "mypy==1.1.1",
+  "flake8==6.0.0",
+  "isort==5.12.0",
+  "black==23.1.0",
+]
+stub = [
+  "google-api-python-client-stubs==1.16.0",
+  "types-Markdown==3.4.2.5",
+]
+doc = []
+
+[project.scripts]
+labmail = "labmail.__main__:main"
+
+[tool.hatch.version]
+path = "src/labmail/__init__.py"
+
+[tool.hatch.envs.test]
+features = ["test", "stub"]
+
+[tool.hatch.envs.test.scripts]
+test = "scripts/test.sh {args}"
+format = "scripts/format.sh {args}"
+lint = "scripts/lint.sh {args}"
+
+[tool.hatch.envs.doc]
+features = ["doc"]
+
+[tool.hatch.envs.doc.scripts]
+
+[tool.mypy]
+strict = true
+sqlite_cache = true
+
+[[tool.mypy.overrides]]
+module = [
+  "google.*",
+  "google_auth_oauthlib",
+]
+ignore_missing_imports = true
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+addopts = "--cov=labmail"
