@@ -38,7 +38,7 @@ test = [
   "black==23.3.0",
 ]
 stub = [
-  "google-api-python-client-stubs==1.16.0",
+  "google-api-python-client-stubs==1.17.0",
   "types-Markdown==3.4.2.9",
 ]
 doc = []
