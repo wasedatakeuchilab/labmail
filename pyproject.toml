@@ -39,7 +39,7 @@ test = [
 ]
 stub = [
   "google-api-python-client-stubs==1.17.0",
-  "types-Markdown==3.4.2.9",
+  "types-Markdown==3.4.2.10",
 ]
 doc = []
 
