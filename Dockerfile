@@ -1,9 +1,9 @@
-FROM python:3.11-bullseye as builder
+FROM python:3.12-bullseye as builder
 WORKDIR /work
 COPY . /work
 RUN pip install --no-cache-dir .
 
-FROM python:3.11-slim-bullseye as runner
+FROM python:3.12-slim-bullseye as runner
 LABEL org.opencontainers.image.title="Labmail"
 LABEL org.opencontainers.image.description="Sends a message with your signature via Gmail"
 LABEL org.opencontainers.image.licenses="MIT"
