@@ -1,6 +1,6 @@
 {
   "name": "Python 3",
-  "image": "mcr.microsoft.com/vscode/devcontainers/python:3.11",
+  "image": "mcr.microsoft.com/vscode/devcontainers/python:3.12",
   "mounts": [],
   "runArgs": [],
   "features": {
@@ -16,6 +16,7 @@
       "settings": {},
       "extensions": [
         "esbenp.prettier-vscode",
+        "github.vscode-github-actions",
         "ninoseki.vscode-pylens",
         "ms-azuretools.vscode-docker",
         "ms-python.black-formatter",
