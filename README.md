@@ -46,7 +46,7 @@ You can install it with `pip` + `git`.
 $ pip install git+https://github.com/wasedatakeuchilab/labmail
 ```
 
-We also provides the Docker image.
+We also provide the Docker image.
 
 ```console
 $ docker pull ghcr.io/wasedatakeuchilab/labmail
@@ -65,7 +65,7 @@ Have a nice weekend!
 EOF
 ```
 
-If you run `labmail` for the first time, you will be asked whether you authorize the app from Google.
+If you run `labmail` for the first time, you will be asked whether you authorize the app by Google.
 
 > Note: The authorization flow will fail if your Google account is not Waseda one.
 
