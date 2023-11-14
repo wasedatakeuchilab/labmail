@@ -1,6 +1,7 @@
 FROM python:3.12 as builder
 WORKDIR /work
 COPY . /work
+# hadolint ignore=DL3013
 RUN pip install --no-cache-dir .
 
 FROM python:3.12-slim as runner
