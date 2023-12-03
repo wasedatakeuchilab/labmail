@@ -35,7 +35,7 @@ test = [
 ]
 mypy = [
   "mypy==1.7.1",
-  "google-api-python-client-stubs==1.20.1",
+  "google-api-python-client-stubs==1.23.0",
   "types-Markdown==3.5.0.3",
 ]
 
