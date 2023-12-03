@@ -23,8 +23,21 @@ dependencies = [
 dynamic = ["version"]
 
 [project.urls]
-Documentation = ""
+Documentation = "https://github.com/wasedatakeuchilab/labmail"
 Homepage = "https://github.com/wasedatakeuchilab/labmail"
+
+[project.optional-dependencies]
+test = [
+  "pytest==7.4.3",
+  "pytest-cov==4.1.0",
+  "pytest-describe==2.1.0",
+  "pytest-mock==3.12.0",
+]
+mypy = [
+  "mypy==1.7.0",
+  "google-api-python-client-stubs==1.20.1",
+  "types-Markdown==3.5.0.1",
+]
 
 [project.scripts]
 labmail = "labmail.__main__:main"
@@ -33,15 +46,7 @@ labmail = "labmail.__main__:main"
 path = "src/labmail/__init__.py"
 
 [tool.hatch.envs.default]
-dependencies = [
-  "pytest==7.4.3",
-  "pytest-cov==4.1.0",
-  "pytest-describe==2.1.0",
-  "pytest-mock==3.12.0",
-  "mypy==1.7.0",
-  "google-api-python-client-stubs==1.20.1",
-  "types-Markdown==3.5.0.1",
-]
+features = ["test", "mypy"]
 
 [tool.hatch.envs.default.scripts]
 test = "pytest --cov-report=term-missing:skip-covered src tests {args}"
@@ -51,9 +56,9 @@ check-type = "mypy src tests {args}"
 [tool.hatch.envs.lint]
 skip-install = true
 dependencies = [
-  "flake8==6.1.0",
-  "isort==5.12.0",
   "black==23.11.0",
+  "isort==5.12.0",
+  "flake8==6.1.0",
 ]
 
 [tool.hatch.envs.lint.scripts]
