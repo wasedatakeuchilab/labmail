@@ -18,7 +18,7 @@ repos:
       - id: requirements-txt-fixer
       - id: trailing-whitespace
   - repo: https://github.com/pycqa/isort
-    rev: 5.12.0
+    rev: 5.13.0
     hooks:
       - id: isort
         name: Sort Python imports
@@ -49,39 +49,36 @@ repos:
         args:
           - --format=parsable
           - --config-data=relaxed
-  - repo: https://github.com/pecigonzalo/pre-commit-shfmt
-    rev: v2.1.0
+  - repo: https://github.com/maxwinterstein/shfmt-py
+    rev: v3.7.0.1
     hooks:
-      - id: shell-fmt-docker
+      - id: shfmt
         name: Format shell scripts
         args:
+          - -w
           - -i=2
-  - repo: https://github.com/koalaman/shellcheck-precommit
-    rev: v0.9.0
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.9.0.6
     hooks:
       - id: shellcheck
         name: Lint shell scripts
-  - repo: https://github.com/hadolint/hadolint
+  - repo: https://github.com/AleksaC/hadolint-py
     rev: v2.12.0
     hooks:
-      - id: hadolint-docker
+      - id: hadolint
         name: Lint Dockerfiles
-  - repo: local
-    hooks:
-      - id: dockfmt
-        name: Format Dockerfiles
-        language: docker_image
-        types:
-          - dockerfile
-        entry: jess/dockfmt:v0.3.3
-        args:
-          - fmt
+  # TODO: Create dockfmt-py repository that runs
+  #       dockfmt without docker or system installation.
+  # - repo: local
+  #   hooks:
+  #     - id: dockfmt
+  #       name: Format Dockerfiles
+  #       language: docker_image
+  #       types:
+  #         - dockerfile
+  #       entry: jess/dockfmt:v0.3.3
+  #       args:
+  #         - fmt
 ci:
   autofix_commit_msg: 🎨 [pre-commit.ci] Auto format from pre-commit.com hooks
   autoupdate_commit_msg: ⬆ [pre-commit.ci] pre-commit autoupdate
-  skip:
-    # Docker hooks
-    - shell-fmt-docker
-    - shellcheck
-    - hadolint-docker
-    - dockfmt
