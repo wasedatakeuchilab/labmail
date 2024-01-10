@@ -7,8 +7,8 @@ import typing as t
 
 import pytest
 import pytest_mock
-
 from labmail import gmail_api
+
 from tests import FixtureRequest
 
 if t.TYPE_CHECKING:  # pragma: no cover

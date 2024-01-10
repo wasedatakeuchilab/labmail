@@ -1,5 +1,6 @@
 """
-This module is aimed to customize behaviors depending on the running environment (e.g. in a container) by enviroment variables.
+This module is aimed to customize behaviors depending on
+the running environment (e.g. in a container) by enviroment variables.
 
 If a better solution is found in the future, this module will be replaced with it.
 """

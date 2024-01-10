@@ -30,7 +30,7 @@ def get_default_config() -> dict[str, t.Any]:
     """
     return {
         "installed": {
-            "client_id": "416316022973-k055mip7ifo52nrdkie3afrlao0cente.apps.googleusercontent.com",
+            "client_id": "416316022973-k055mip7ifo52nrdkie3afrlao0cente.apps.googleusercontent.com",  # noqa: E501
             "client_secret": "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",
             "auth_uri": "https://accounts.google.com/o/oauth2/auth",
             "token_uri": "https://oauth2.googleapis.com/token",
@@ -229,7 +229,8 @@ def list_message(
     -------
     messages : list[Message]
         A list of Message objects.
-        See also https://developers.google.com/gmail/api/reference/rest/v1/users.messages#Message for Message.
+        See also https://developers.google.com/gmail/api/reference/rest/v1/users.messages#Message
+        for Message.
     next_page_token : str
         The token to retrieve the next page.
     result_size_estimate : int
@@ -285,7 +286,8 @@ def get_message(
     -------
     Message
         The retrieved Message object.
-        See also https://developers.google.com/gmail/api/reference/rest/v1/users.messages#Message for Message.
+        See also https://developers.google.com/gmail/api/reference/rest/v1/users.messages#Message
+        for Message.
 
     See Also
     --------
@@ -319,7 +321,8 @@ def send_message(
     -------
     Message
         The sent Message object.
-        See also https://developers.google.com/gmail/api/reference/rest/v1/users.messages#Message for Message.
+        See also https://developers.google.com/gmail/api/reference/rest/v1/users.messages#Message
+        for Message.
 
     See Also
     --------
