@@ -4,7 +4,6 @@ import os
 import pytest
 import pytest_mock
 from click import exceptions, testing
-
 from labmail import SubjectUsedError, __main__, text_utils
 
 
