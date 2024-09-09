@@ -1,8 +1,8 @@
 import pathlib
 
 import pytest
-from labmail import text_utils
 
+from labmail import text_utils
 from tests import get_testcase_dir
 
 TESTCASE_DIR = get_testcase_dir(__file__)
