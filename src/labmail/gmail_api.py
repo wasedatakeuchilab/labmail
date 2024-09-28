@@ -84,7 +84,7 @@ def new_credentials(
         bind_addr=_env.GOOGLE_OAUTH_FLOW_BIND,
         port=_env.GOOGLE_OAUTH_FLOW_PORT,
     )
-    return creds
+    return creds  # type: ignore[no-any-return]
 
 
 def load_credentials(
@@ -110,13 +110,13 @@ def load_credentials(
     ValueError
         If the constructed credentials is invalid.
     """
-    creds = _credentials.Credentials.from_authorized_user_file(filepath, scopes)
+    creds = _credentials.Credentials.from_authorized_user_file(filepath, scopes)  # type: ignore[no-untyped-call]
     if not creds.valid:
         if creds.refresh_token:
-            creds.refresh(requests.Request())
+            creds.refresh(requests.Request())  # type: ignore[no-untyped-call]
         else:
             raise ValueError("The credentials is not valid and has no refresh token")
-    return creds
+    return creds  # type: ignore[no-any-return]
 
 
 def save_credentials(
@@ -135,7 +135,7 @@ def save_credentials(
     filepath = pathlib.Path(filepath)
     filepath.parent.mkdir(parents=True, exist_ok=True)
     with filepath.open("w") as f:
-        f.write(creds.to_json())
+        f.write(creds.to_json())  # type: ignore[no-untyped-call]
 
 
 @contextlib.contextmanager
