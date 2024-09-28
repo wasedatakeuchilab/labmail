@@ -63,7 +63,6 @@ sqlite_cache = true
 
 [[tool.mypy.overrides]]
 module = [
-  "google.*",
   "google_auth_oauthlib",
 ]
 ignore_missing_imports = true
