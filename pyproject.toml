@@ -15,7 +15,7 @@ authors = [
 # classifiers = []
 dependencies = [
   "click~=8.1.7",
-  "google-auth~=2.29.0",
+  "google-auth~=2.35.0",
   "google-auth-oauthlib~=1.2.0",
   "google-api-python-client~=2.147.0",
   "google-api-python-client-stubs~=1.27.0",
@@ -63,7 +63,6 @@ sqlite_cache = true
 
 [[tool.mypy.overrides]]
 module = [
-  "google.*",
   "google_auth_oauthlib",
 ]
 ignore_missing_imports = true
