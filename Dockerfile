@@ -1,10 +1,10 @@
-FROM python:3.12 as builder
+FROM python:3.13 as builder
 WORKDIR /work
 COPY . /work
 # hadolint ignore=DL3013
 RUN pip install --no-cache-dir .
 
-FROM python:3.12-slim as runner
+FROM python:3.13-slim as runner
 LABEL org.opencontainers.image.title="Labmail"
 LABEL org.opencontainers.image.description="Sends a message with your signature via Gmail"
 LABEL org.opencontainers.image.licenses="MIT"
