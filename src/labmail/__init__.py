@@ -1,4 +1,4 @@
-__version__ = "0.0.7"
+__version__ = "1.0.0"
 
 import email.mime.text as mime_text
 import logging
