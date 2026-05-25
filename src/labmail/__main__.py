@@ -58,11 +58,11 @@ FILE        Filepath or stdin(default) for the message to send
         ["auto"] + [text_type.value for text_type in text_utils.TextType]
     ),
     default="auto",
-    callback=lambda ctx, _, value: text_utils.determine_text_type(
-        ctx.params["file"].name
-    )
-    if value == "auto"
-    else text_utils.TextType(value),
+    callback=lambda ctx, _, value: (
+        text_utils.determine_text_type(ctx.params["file"].name)
+        if value == "auto"
+        else text_utils.TextType(value)
+    ),
     help="Text type of the body",
     show_default=True,
 )
