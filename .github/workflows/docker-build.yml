@@ -37,7 +37,7 @@ jobs:
             org.opencontainers.image.vendor=${{ github.repository_owner }}
             org.opencontainers.image.source=${{ github.repositoryUrl }}/blob/${{ github.ref_name }}/${{ env.DOCKERFILE }}
       - name: Docker login
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
@@ -93,7 +93,7 @@ jobs:
             type=semver,pattern={{version}},suffix=-{{date 'YYYYMMDD'}}
             type=semver,pattern={{major}}.{{minor}}
       - name: Docker login
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
